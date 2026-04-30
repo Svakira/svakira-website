@@ -1099,13 +1099,17 @@ button {
 
 .social-column-primary .social-card-metric {
   border-color: transparent;
-  animation:
-    hex-holo-flicker 3.2s steps(2, end) infinite,
-    btn-glow-pulse 2.4s ease-in-out infinite;
+  animation: hex-holo-flicker 3.2s steps(2, end) infinite;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s ease;
   min-height: 4.5rem;
+}
+
+.who-card.social-card-metric {
+  animation:
+    hex-holo-flicker 3.2s steps(2, end) infinite,
+    btn-glow-pulse 2.4s ease-in-out infinite;
 }
 
 @keyframes btn-glow-pulse {
