@@ -1120,12 +1120,12 @@ button {
 
 @keyframes btn-glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 4px rgba(98, 241, 255, 0.15), inset 0 0 6px rgba(98, 241, 255, 0.05);
+    filter: drop-shadow(0 0 3px rgba(98, 241, 255, 0.2));
     border-color: rgba(65, 210, 255, 0.25);
   }
   50% {
-    box-shadow: 0 0 14px rgba(98, 241, 255, 0.55), 0 0 28px rgba(98, 241, 255, 0.2), inset 0 0 10px rgba(98, 241, 255, 0.12);
-    border-color: rgba(98, 241, 255, 0.75);
+    filter: drop-shadow(0 0 10px rgba(98, 241, 255, 0.7)) drop-shadow(0 0 22px rgba(98, 241, 255, 0.3));
+    border-color: rgba(98, 241, 255, 0.8);
   }
 }
 
