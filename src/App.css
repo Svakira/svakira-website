@@ -2581,7 +2581,23 @@ button {
 }
 
 @media (max-width: 760px) {
+  /* ── ENABLE SCROLL ── */
+  html,
+  body {
+    overflow: visible;
+    height: auto;
+  }
+
+  #root {
+    height: auto;
+    overflow: visible;
+  }
+
   .app-shell {
+    height: auto;
+    min-height: 100svh;
+    overflow-x: hidden;
+    overflow-y: visible;
     padding: 0.85rem;
   }
 
@@ -2652,5 +2668,143 @@ button {
 
   .panel-note {
     text-align: left;
+  }
+}
+
+/* ═══════════════════════════════════════
+   MOBILE RESPONSIVE — phones ≤ 600px
+   (ONLY overrides layout for small screens;
+    desktop styles are untouched)
+   ═══════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  /* ── DECK LAYOUT ── */
+  .deck-layout {
+    max-height: none;
+    min-height: auto;
+    gap: 0.6rem;
+  }
+
+  /* ── HERO PANEL ── */
+  .hero-panel {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .hero-panel,
+  .project-panel {
+    overflow: visible;
+  }
+
+  /* ── HOLO TICKER TEXT (min-width: 60ch blocks mobile) ── */
+  .hero-holo-text {
+    min-width: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.78rem;
+  }
+
+  /* ── WORLD / OPS PANELS ── */
+  .world-panel,
+  .ops-panel {
+    width: 100%;
+  }
+
+  /* ── WHO DOSSIER: stack columns vertically ── */
+  .who-dossier-body {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .who-col-left {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .who-photo {
+    width: 6rem;
+    flex-shrink: 0;
+  }
+
+  .who-id-block {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .who-footer-note {
+    display: none; /* hidden in left col on mobile; shown in right col flow */
+  }
+
+  .who-col-right {
+    width: 100%;
+  }
+
+  .who-col-mid {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: 1px dotted rgba(93, 242, 255, 0.15);
+    padding: 0.5rem 0 0;
+  }
+
+  .who-three-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ── AUTH POPUP ── */
+  .auth-overlay {
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+  }
+
+  .auth-popup {
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    min-width: 0;
+    padding: 1.2rem 1rem;
+  }
+
+  /* ── WHO OVERLAY (dossier modal) ── */
+  .auth-overlay.who-mode {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  /* ── SOCIAL GRID ── */
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── PROJECT PANEL ── */
+  .project-panel {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .project-panel-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .project-record-body {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  /* ── PANEL FLOOR (contact button) ── */
+  .panel-floor-holo {
+    padding: 0.6rem 0;
+  }
+
+  /* ── TOP RAIL ── */
+  .rail-left,
+  .rail-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
   }
 }
