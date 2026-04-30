@@ -1093,17 +1093,40 @@ button {
   gap: 0.58rem;
 }
 
+/* Metrics: [Local Time | Local Date] / [UTC Sync centered] */
+.social-column-metrics {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.social-column-metrics .social-card-metric:nth-child(3) {
+  grid-column: 1 / -1; /* UTC Sync spans full width */
+}
+
 .social-column-primary {
   min-width: 0;
 }
 
 .social-column-primary .social-card-metric {
   border-color: transparent;
-  animation: hex-holo-flicker 3.2s steps(2, end) infinite;
+  animation:
+    hex-holo-flicker 3.2s steps(2, end) infinite,
+    btn-glow-pulse 2.4s ease-in-out infinite;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s ease;
   min-height: 4.5rem;
+}
+
+@keyframes btn-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(98, 241, 255, 0.15), inset 0 0 6px rgba(98, 241, 255, 0.05);
+    border-color: rgba(65, 210, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(98, 241, 255, 0.55), 0 0 28px rgba(98, 241, 255, 0.2), inset 0 0 10px rgba(98, 241, 255, 0.12);
+    border-color: rgba(98, 241, 255, 0.75);
+  }
 }
 
 .social-column-primary .social-card-metric:hover {
@@ -1168,6 +1191,7 @@ button {
 .social-column-metrics .social-card-metric {
   border-top-color: transparent;
   border-bottom-color: transparent;
+  min-height: 5rem;
 }
 
 .social-card-metric .social-icon {
@@ -2730,6 +2754,11 @@ button {
 
   .social-column {
     gap: 0.4rem;
+  }
+
+  /* Mantener sub-grid 2 cols en metrics (Time | Date) / (UTC) */
+  .social-column-metrics {
+    grid-template-columns: 1fr 1fr;
   }
 
   .social-hub {
