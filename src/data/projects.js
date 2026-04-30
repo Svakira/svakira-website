@@ -2,7 +2,7 @@ export const projects = [
   {
     name: 'Infermatic AI Engineer',
     status: 'current working role / active engineering operations',
-    href: '',
+    href: 'https://infermatic.ai/',
     tag: 'role',
   },
   {
@@ -18,9 +18,9 @@ export const projects = [
     tag: 'tool',
   },
   {
-    name: 'Spotify Artist',
-    status: 'music profile / public artist page',
-    href: 'https://open.spotify.com/artist/1rTroefuaMuP7NOSowBQm5?si=seeICbBUTDWWY98WQKJLAA',
-    tag: 'audio',
+    name: 'Biobot',
+    status: 'ai discord bot / open source',
+    href: 'https://github.com/Braryai/biobot',
+    tag: 'ai',
   },
 ]
