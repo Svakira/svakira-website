@@ -2581,7 +2581,9 @@ button {
 }
 
 @media (max-width: 760px) {
-  /* ── ENABLE SCROLL — lo más importante ── */
+  /* ══════════════════════════════════════
+     SCROLL — base fix
+     ══════════════════════════════════════ */
   html,
   body {
     overflow-x: hidden;
@@ -2602,27 +2604,23 @@ button {
     padding: 0.75rem;
   }
 
-  /* ── DECK LAYOUT ── */
-  .deck-layout {
-    grid-template-columns: 1fr;
-    align-items: start;
-    min-height: auto;
-    max-height: none;
-    gap: 0.6rem;
-  }
-
-  /* ── PANELS: allow height to grow ── */
+  /* ══════════════════════════════════════
+     PERFORMANCE — quitar backdrop-filter
+     en móvil porque causa scroll jank
+     ══════════════════════════════════════ */
+  .top-rail,
   .hero-panel,
   .project-panel {
-    overflow: visible;
-    min-height: auto;
+    backdrop-filter: none;
   }
 
-  /* ── NAVBAR / TOP RAIL ── */
+  /* ══════════════════════════════════════
+     NAVBAR / TOP RAIL
+     ══════════════════════════════════════ */
   .top-rail {
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    gap: 0.4rem 0.5rem;
+    gap: 0.35rem 0.5rem;
     padding: 0.5rem 0.6rem;
   }
 
@@ -2631,6 +2629,7 @@ button {
     grid-row: 1;
     flex-wrap: wrap;
     gap: 0.3rem;
+    align-items: center;
   }
 
   .audio-toggle {
@@ -2646,15 +2645,48 @@ button {
     gap: 0.5rem;
   }
 
-  /* ── HERO ── */
+  /* ══════════════════════════════════════
+     COLOMBIA FLAG — fix: queda fija en esquina
+     ══════════════════════════════════════ */
+  .side-stamp-wrap {
+    position: fixed;
+    left: 0.5rem;
+    bottom: 0.75rem;
+    z-index: 50;
+  }
+
+  /* ══════════════════════════════════════
+     DECK LAYOUT — permitir altura libre
+     ══════════════════════════════════════ */
+  .deck-layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+    min-height: auto;
+    max-height: none;
+    gap: 0.6rem;
+  }
+
+  /* ══════════════════════════════════════
+     HERO PANEL
+     ══════════════════════════════════════ */
+  .hero-panel {
+    min-height: auto;
+    overflow: hidden; /* mantener hidden para no exponer corner-panel */
+  }
+
   .hero-panel h1 {
     font-size: clamp(2.5rem, 16vw, 4rem);
+  }
+
+  /* Ocultar corner-panel — causa overflow derecho */
+  .hero-corner-panel {
+    display: none;
   }
 
   .hero-meta {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .identity-block {
@@ -2667,7 +2699,9 @@ button {
     font-size: 1rem;
   }
 
-  /* ── HOLO TICKER ── */
+  /* ══════════════════════════════════════
+     HOLO TICKER — quitar min-width
+     ══════════════════════════════════════ */
   .hero-holo-text {
     min-width: 0;
     white-space: pre-wrap;
@@ -2675,25 +2709,54 @@ button {
     font-size: 0.72rem;
   }
 
-  /* ── SOCIAL ── */
-  .social-card {
-    clip-path: none;
-    border-radius: 0.35rem;
-  }
-
-  .social-grid {
+  /* ══════════════════════════════════════
+     SOCIAL INTERFACE — hero sightline
+     ══════════════════════════════════════ */
+  .hero-sightline {
     grid-template-columns: 1fr;
   }
 
-  .social-hub {
-    min-height: 5rem;
+  /* ══════════════════════════════════════
+     SOCIAL GRID — stack columns, reducir cards
+     ══════════════════════════════════════ */
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 
   .social-column {
-    gap: 0.35rem;
+    gap: 0.4rem;
   }
 
-  /* ── WORLD / OPS / HOLOGRAM ── */
+  .social-hub {
+    min-height: 4rem;
+  }
+
+  .social-card {
+    clip-path: none;
+    border-radius: 0.3rem;
+  }
+
+  /* Reducir tamaño de valores en metric cards */
+  .social-value-time {
+    font-size: 1.1rem !important;
+  }
+
+  .social-value-date {
+    font-size: 1rem !important;
+  }
+
+  .social-value-utc {
+    font-size: 1.05rem !important;
+  }
+
+  .social-card-metric {
+    min-height: 4.5rem;
+  }
+
+  /* ══════════════════════════════════════
+     WORLD / OPS / HOLOGRAM
+     ══════════════════════════════════════ */
   .world-panel,
   .ops-panel {
     width: 100%;
@@ -2714,9 +2777,12 @@ button {
     justify-self: center;
   }
 
-  /* ── PROJECT PANEL ── */
+  /* ══════════════════════════════════════
+     PROJECT PANEL
+     ══════════════════════════════════════ */
   .project-panel {
     min-height: auto;
+    overflow: visible;
   }
 
   .project-panel-heading {
@@ -2740,7 +2806,9 @@ button {
     text-align: left;
   }
 
-  /* ── WHO DOSSIER: stack columns vertically ── */
+  /* ══════════════════════════════════════
+     WHO DOSSIER — stack vertical
+     ══════════════════════════════════════ */
   .who-dossier-body {
     flex-direction: column;
     gap: 0.75rem;
@@ -2783,7 +2851,9 @@ button {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* ── AUTH / WHO OVERLAY ── */
+  /* ══════════════════════════════════════
+     AUTH POPUP — ajustar a pantalla
+     ══════════════════════════════════════ */
   .auth-overlay {
     align-items: flex-start;
     padding: 1rem;
@@ -2799,7 +2869,9 @@ button {
     margin: auto;
   }
 
-  /* ── PANEL FLOOR (contact button) ── */
+  /* ══════════════════════════════════════
+     PANEL FLOOR — contact button
+     ══════════════════════════════════════ */
   .panel-floor-holo {
     padding: 0.6rem 0;
   }
