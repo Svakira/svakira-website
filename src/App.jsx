@@ -113,6 +113,23 @@ export default function App() {
   const [whoCardExiting, setWhoCardExiting] = useState(false)
 
   useEffect(() => {
+    async function startOnInteraction() {
+      try {
+        await audioRef.current?.play()
+        setAudioState('playing')
+      } catch {
+        // browser blocked it — user will need to click the button manually
+      }
+    }
+    window.addEventListener('click', startOnInteraction, { once: true })
+    window.addEventListener('keydown', startOnInteraction, { once: true })
+    return () => {
+      window.removeEventListener('click', startOnInteraction)
+      window.removeEventListener('keydown', startOnInteraction)
+    }
+  }, [])
+
+  useEffect(() => {
     const videoA = catVideoARef.current
     const videoB = catVideoBRef.current
     const canvas = catCanvasRef.current
@@ -513,7 +530,7 @@ export default function App() {
 
   return (
     <main className={`app-shell state-${audioState}`}>
-      <audio ref={audioRef} loop preload="none" src="/audio/Siltent%20Loop.wav" />
+      <audio ref={audioRef} loop preload="auto" src={`${import.meta.env.BASE_URL}audio/Siltent%20Loop.wav`} />
 
       {useStaticBackground ? (
         <img
@@ -534,7 +551,7 @@ export default function App() {
             onEnded={() => handleBackgroundVideoEnded('a')}
             aria-hidden="true"
           >
-            <source src="/sakura_tree_moving_with_t..._zoom_in_dont_move_camera.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}sakura_tree_moving_with_t..._zoom_in_dont_move_camera.mp4`} type="video/mp4" />
           </video>
 
           <video
@@ -546,7 +563,7 @@ export default function App() {
             onEnded={() => handleBackgroundVideoEnded('b')}
             aria-hidden="true"
           >
-            <source src="/sakura_tree_moving_with_t..._zoom_in_dont_move_camera-reverse.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}sakura_tree_moving_with_t..._zoom_in_dont_move_camera-reverse.mp4`} type="video/mp4" />
           </video>
         </>
       )}
@@ -899,7 +916,7 @@ export default function App() {
             <canvas ref={catCanvasRef} className="cat-feed-canvas" aria-hidden="true" />
             <video
               ref={catVideoARef}
-              src="/Cat_playing_with_cables_and_moving_around.mp4"
+              src={`${import.meta.env.BASE_URL}Cat_playing_with_cables_and_moving_around.mp4`}
               className="cat-feed-video-source"
               muted
               playsInline
@@ -908,7 +925,7 @@ export default function App() {
             />
             <video
               ref={catVideoBRef}
-              src="/Cat_playing_with_cables_and_moving_around-reverse.mp4"
+              src={`${import.meta.env.BASE_URL}Cat_playing_with_cables_and_moving_around-reverse.mp4`}
               className="cat-feed-video-source"
               muted
               playsInline
