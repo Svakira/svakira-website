@@ -770,11 +770,10 @@ export default function App() {
                             <div className="who-section">
                               <p className="who-section-title">[ INTERESTS ]</p>
                               <ul className="who-list">
-                                <li>Artificial Intelligence</li>
-                                <li>Cyberpunk / Retro-Fi</li>
-                                <li>Open Source</li>
-                                <li>Sound Design</li>
-                                <li>Building the new</li>
+                                 <li>Artificial Intelligence</li>
+                                 <li>Cyberpunk / Retro-Fi</li>
+                                 <li>Open Source</li>
+                                 <li>Sound Design</li>
                               </ul>
                             </div>
                             <div className="who-section">
