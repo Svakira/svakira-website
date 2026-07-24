@@ -1,6 +1,6 @@
 export const projects = [
   {
-    name: 'Infermatic AI Engineer',
+    name: 'AI Engineer',
     status: 'current working role / active engineering operations',
     href: 'https://infermatic.ai/',
     tag: 'role',
