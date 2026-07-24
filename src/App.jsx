@@ -83,7 +83,7 @@ const whoLines = [
 ]
 
 const socialLinks = [
-  { id: '04', label: 'Spotify', handle: '/svakira', tag: 'Audio Stream', icon: 'SP', href: 'https://open.spotify.com/artist/17Ttl5B5wX6B8YF42nh47C?si=Rxd-chbpT8SrJR8ZTUSxjA' },
+  { id: '04', label: 'Spotify', handle: '/brarii', tag: 'Audio Stream', icon: 'SP', href: 'https://open.spotify.com/artist/17Ttl5B5wX6B8YF42nh47C?si=Rxd-chbpT8SrJR8ZTUSxjA' },
 ]
 
 export default function App() {
@@ -842,6 +842,17 @@ export default function App() {
                             </div>
                           </a>
                         ))}
+                        <button
+                          type="button"
+                          className={`social-card social-card-metric who-card${whoCardExiting ? ' is-exiting' : ''}`}
+                          onClick={handleWhoClick}
+                          disabled={whoCardExiting}
+                        >
+                          <div className="social-copy">
+                            <h3 className="who-btn-label">Who is Sara Cardona?</h3>
+                            <p>access entity file</p>
+                          </div>
+                        </button>
                       </div>
                     </div>
                   )}

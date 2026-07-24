@@ -1971,7 +1971,7 @@ body {
 
 .hero-panel h1 {
   margin: 0.35rem 0 0.32rem;
-  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   line-height: 0.86;
   text-transform: uppercase;
   letter-spacing: 0.08em;
