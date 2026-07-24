@@ -37,7 +37,7 @@ const whoLines = [
   '> ACCESSING ENTITY FILE...',
   '─────────────────────────────────',
   '',
-  '  DESIGNATION ......... SVAKIRA',
+  '  DESIGNATION ......... SARA CARDONA',
   '  ORIGIN .............. COLOMBIA, SOUTH AMERICA',
   '  CLASSIFICATION ....... ENTITY / NON-CONTAINED',
   '  STATUS ............... ACTIVE — SIGNAL STRONG',
@@ -83,8 +83,7 @@ const whoLines = [
 ]
 
 const socialLinks = [
-  { id: '04', label: 'Spotify', handle: '/svakira', tag: 'Audio Stream', icon: 'SP', href: 'https://open.spotify.com/artist/1rTroefuaMuP7NOSowBQm5?si=seeICbBUTDWWY98WQKJLAA' },
-  { id: '05', label: 'GitHub', handle: 'github.com/svakira', tag: 'Code Repo', icon: 'GH', href: 'https://github.com/Svakira' },
+  { id: '04', label: 'Spotify', handle: '/svakira', tag: 'Audio Stream', icon: 'SP', href: 'https://open.spotify.com/artist/17Ttl5B5wX6B8YF42nh47C?si=Rxd-chbpT8SrJR8ZTUSxjA' },
 ]
 
 export default function App() {
@@ -732,7 +731,7 @@ export default function App() {
                             </div>
                           </div>
                           <div className="who-id-block">
-                            <div className="who-field"><span>ID</span><strong>SVAKIRA</strong></div>
+                            <div className="who-field"><span>ID</span><strong>SARA CARDONA</strong></div>
                             <div className="who-field"><span>ALIAS</span><strong>SVAK</strong></div>
                             <div className="who-field"><span>ORIGIN</span><strong>COLOMBIA</strong></div>
                             <div className="who-field"><span>STATUS</span><strong className="is-active-field">ACTIVE</strong></div>
@@ -843,17 +842,6 @@ export default function App() {
                             </div>
                           </a>
                         ))}
-                        <button
-                          type="button"
-                          className={`social-card social-card-metric who-card${whoCardExiting ? ' is-exiting' : ''}`}
-                          onClick={handleWhoClick}
-                          disabled={whoCardExiting}
-                        >
-                          <div className="social-copy">
-                            <h3 className="who-btn-label">Who is Svakira?</h3>
-                            <p>access entity file</p>
-                          </div>
-                        </button>
                       </div>
                     </div>
                   )}
@@ -862,7 +850,7 @@ export default function App() {
               <div className={`identity-block ${whoMode ? 'is-compact' : ''}`}>
                 <div className="identity-content">
                   <div className="identity-title">
-                    <h1>Svakira</h1>
+                    <h1>Sara Cardona</h1>
                   </div>
                   <p className="hero-holo-text" aria-label="Mind signal hologram">
                     {holoText}

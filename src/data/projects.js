@@ -17,10 +17,4 @@ export const projects = [
     href: 'https://tucasalinda.co/',
     tag: 'tool',
   },
-  {
-    name: 'Biobot',
-    status: 'ai discord bot / open source',
-    href: 'https://github.com/Braryai/biobot',
-    tag: 'ai',
-  },
 ]

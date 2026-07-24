@@ -7,7 +7,7 @@ describe('App', () => {
   test('renders the compact landing layout with custom region labels', () => {
     render(<App />)
 
-    expect(screen.getByRole('heading', { name: /svakira/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /sara cardona/i })).toBeInTheDocument()
     expect(screen.getByText(/sector colombia/i)).toBeInTheDocument()
     expect(screen.getByText(/red zone/i)).toBeInTheDocument()
     expect(screen.getByText(/primary user/i)).toBeInTheDocument()
@@ -19,7 +19,7 @@ describe('App', () => {
     expect(screen.getByText(/spotify artist/i)).toBeInTheDocument()
     expect(screen.getByText(/infermatic ai engineer/i)).toBeInTheDocument()
     expect(screen.getAllByRole('heading', { level: 3 })[0]).toHaveTextContent(/infermatic ai engineer/i)
-    expect(screen.getAllByRole('link', { name: /open record/i }).length).toBeGreaterThanOrEqual(3)
+    expect(screen.getAllByRole('link', { name: /open record/i }).length).toBeGreaterThanOrEqual(2)
     expect(screen.getByLabelText(/cable cat feed/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/cable cat feed/i).querySelector('video')).not.toHaveAttribute('loop')
     expect(screen.queryByText(/record link stable/i)).not.toBeInTheDocument()
